@@ -1,4 +1,6 @@
 import React, { Componenet } from 'react'
+import {connect} from 'react-redux'
+import {handleAddTweet} from '../actions/tweets'
 
 
 class NewTweet extends React.Component {
@@ -21,6 +23,8 @@ class NewTweet extends React.Component {
         const { text } = this.state
 
         //todo: add tweet to store
+        const {dispatch,id}=this.props
+        dispatch(handleAddTweet(text,id))
 
         console.log('New Tweet: ', text)
 
@@ -65,4 +69,4 @@ class NewTweet extends React.Component {
     }
 }
 
-export default NewTweet
+export default connect()(NewTweet)
