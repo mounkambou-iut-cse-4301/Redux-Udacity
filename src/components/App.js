@@ -13,23 +13,23 @@ class App extends Component {
     this.props.dispatch(handleInitialData())
   }
   render() {
-    return(
-    <Router>
-      <Fragment>
-        <LoadingBar />
-        <div className='container'>
-          <Nav />
-          {this.props.loading === true
-            ? null
-            : <div>
-              <Route path='/' exact component={Dashboard} />
-              <Route path='/tweet/:id' component={TweetPage} />
-              <Route path='/new' component={NewTweet} />
-            </div>}
-        </div>
-      </Fragment>
-    </Router>
-)
+    return (
+      <Router>
+        <Fragment>
+          <LoadingBar />
+          <div className='container'>
+            <Nav />
+            {this.props.loading === true
+              ? null
+              : <div>
+                <Route path='/' exact component={Dashboard} />
+                <Route path='/tweet/:id' component={TweetPage} />
+                <Route path='/new' component={NewTweet} />
+              </div>}
+          </div>
+        </Fragment>
+      </Router>
+    )
   }
 }
 
